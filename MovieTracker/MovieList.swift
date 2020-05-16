@@ -13,9 +13,14 @@ struct MovieList: View {
     
     var body: some View {
         NavigationView {
-            List(movieStorage.movies) { movie in
-                NavigationLink(destination: MovieDetail(movie: movie, isNewMovie: false)) {
-                    Text("\(movie.title)")
+            List {
+                ForEach(movieStorage.movies,id: \.self.id){ movie in
+                    NavigationLink(destination: MovieDetail(movie: movie, isNewMovie: false)) {
+                        Text(movie.title)
+                    }
+                }.onDelete{ offsets in
+                    self.movieStorage.movies.remove(atOffsets: offsets)
+
                 }
             }.navigationBarTitle("Movies").navigationBarItems(trailing:
                 NavigationLink(destination: MovieDetail(movie: Movie(), isNewMovie: true), label: {
