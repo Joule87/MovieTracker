@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4010B6424771C06000F8100 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4010B6324771C06000F8100 /* TextView.swift */; };
 		F4220861246DBCC00049BB50 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4220860246DBCC00049BB50 /* Movie.swift */; };
 		F4220863246DBDDB0049BB50 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4220862246DBDDB0049BB50 /* MovieList.swift */; };
 		F45EB84F246C8599008E6039 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45EB84E246C8599008E6039 /* AppDelegate.swift */; };
@@ -16,9 +17,11 @@
 		F45EB858246C859A008E6039 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45EB857246C859A008E6039 /* Assets.xcassets */; };
 		F45EB85B246C859A008E6039 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45EB85A246C859A008E6039 /* Preview Assets.xcassets */; };
 		F45EB85E246C859A008E6039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45EB85C246C859A008E6039 /* LaunchScreen.storyboard */; };
+		F4A0E2082477FC700020DC1D /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A0E2072477FC700020DC1D /* MovieAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4010B6324771C06000F8100 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		F4220860246DBCC00049BB50 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		F4220862246DBDDB0049BB50 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		F45EB84B246C8599008E6039 /* MovieTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +33,7 @@
 		F45EB85A246C859A008E6039 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F45EB85D246C859A008E6039 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F45EB85F246C859A008E6039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A0E2072477FC700020DC1D /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4010B6224771BEF000F8100 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F4010B6324771C06000F8100 /* TextView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F4010B6524771E79000F8100 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F45EB859246C859A008E6039 /* Preview Content */,
+				F45EB857246C859A008E6039 /* Assets.xcassets */,
+				F45EB85F246C859A008E6039 /* Info.plist */,
+				F45EB852246C8599008E6039 /* MovieTracker.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F4010B6624771EC0000F8100 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4220862246DBDDB0049BB50 /* MovieList.swift */,
+				F45EB855246C8599008E6039 /* MovieDetail.swift */,
+				F45EB85C246C859A008E6039 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4010B6724771EE6000F8100 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4220860246DBCC00049BB50 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F45EB842246C8599008E6039 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +103,13 @@
 		F45EB84D246C8599008E6039 /* MovieTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F4A0E2042477FC420020DC1D /* Service */,
+				F4010B6724771EE6000F8100 /* Model */,
+				F4010B6624771EC0000F8100 /* View */,
+				F4010B6524771E79000F8100 /* Resources */,
+				F4010B6224771BEF000F8100 /* Common */,
 				F45EB84E246C8599008E6039 /* AppDelegate.swift */,
 				F45EB850246C8599008E6039 /* SceneDelegate.swift */,
-				F45EB857246C859A008E6039 /* Assets.xcassets */,
-				F45EB85C246C859A008E6039 /* LaunchScreen.storyboard */,
-				F45EB85F246C859A008E6039 /* Info.plist */,
-				F45EB852246C8599008E6039 /* MovieTracker.xcdatamodeld */,
-				F45EB859246C859A008E6039 /* Preview Content */,
-				F4220860246DBCC00049BB50 /* Movie.swift */,
-				F4220862246DBDDB0049BB50 /* MovieList.swift */,
-				F45EB855246C8599008E6039 /* MovieDetail.swift */,
 			);
 			path = MovieTracker;
 			sourceTree = "<group>";
@@ -82,6 +120,22 @@
 				F45EB85A246C859A008E6039 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F4A0E2042477FC420020DC1D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4A0E2052477FC480020DC1D /* API */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F4A0E2052477FC480020DC1D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F4A0E2072477FC700020DC1D /* MovieAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +212,8 @@
 				F4220863246DBDDB0049BB50 /* MovieList.swift in Sources */,
 				F45EB854246C8599008E6039 /* MovieTracker.xcdatamodeld in Sources */,
 				F45EB84F246C8599008E6039 /* AppDelegate.swift in Sources */,
+				F4A0E2082477FC700020DC1D /* MovieAPI.swift in Sources */,
+				F4010B6424771C06000F8100 /* TextView.swift in Sources */,
 				F45EB856246C8599008E6039 /* MovieDetail.swift in Sources */,
 				F45EB851246C8599008E6039 /* SceneDelegate.swift in Sources */,
 				F4220861246DBCC00049BB50 /* Movie.swift in Sources */,
@@ -297,10 +353,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MovieTracker/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = SN83FZJ9R5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MovieTracker/Info.plist;
+				INFOPLIST_FILE = MovieTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,10 +373,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MovieTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MovieTracker/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = SN83FZJ9R5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MovieTracker/Info.plist;
+				INFOPLIST_FILE = MovieTracker/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

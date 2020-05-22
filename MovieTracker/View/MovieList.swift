@@ -9,23 +9,27 @@
 import SwiftUI
 
 struct MovieList: View {
-    @EnvironmentObject var movieStorage: MovieStorage
+    @State var movies: [Movie] = []
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(movieStorage.movies,id: \.self.id){ movie in
+                ForEach(movies,id: \.self.id){ movie in
                     NavigationLink(destination: MovieDetail(movie: movie, isNewMovie: false)) {
                         Text(movie.title)
                     }
                 }.onDelete{ offsets in
-                    self.movieStorage.movies.remove(atOffsets: offsets)
+                    self.movies.remove(atOffsets: offsets)
 
                 }
             }.navigationBarTitle("Movies").navigationBarItems(trailing:
-                NavigationLink(destination: MovieDetail(movie: Movie(), isNewMovie: true), label: {
+                NavigationLink(destination: MovieDetail(movie: Movie(title: "", description: "", isWatched: false), isNewMovie: true), label: {
                     Image(systemName: "plus").font(.largeTitle).foregroundColor(.black)
-                })
+                }).onAppear() {
+                    MovieAPI().getAll { movies in
+                        self.movies = movies
+                    }
+                }
             )
         }
     }
