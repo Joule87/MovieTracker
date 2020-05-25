@@ -1,5 +1,5 @@
 //
-//  MovieDetail.swift
+//  MovieDetail1.swift
 //  MovieTracker
 //
 //  Created by Julio Collado on 5/13/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MovieDetail: View {
+struct MovieDetail1: View {
     @State var movie: Movie
     @Environment(\.presentationMode) var presentationMode
     
@@ -62,13 +62,6 @@ struct MovieDetail: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movie: Movie(title: "", description: "", isWatched: false), isNewMovie: true)
-    }
-}
-
-struct SectionTitle: View {
-    var title: String
-    var body: some View {
-        Text(title).font(.caption).foregroundColor(.gray)
+        MovieDetail(movieViewModel: MovieViewModel(movie: Movie(id: 0, title: "", description: "", isWatched: false)))
     }
 }

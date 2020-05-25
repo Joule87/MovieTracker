@@ -9,15 +9,10 @@
 import Foundation
 
 class MovieAPI {
-    func getAll(completion: @escaping (([Movie]) -> Void)) {
+    func getAll(completion: @escaping (([Movie]?) -> Void)) {
         guard let url = URL(string: "https://movietrackers.herokuapp.com/api/movies") else {
-            return
+            fatalError("Invalid URL")
         }
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            let movies = try! JSONDecoder().decode([Movie].self, from: data!)
-            DispatchQueue.main.async {
-                completion(movies)
-            }
-        }.resume()
+        SessionManager.request(url, completion)
     }
 }

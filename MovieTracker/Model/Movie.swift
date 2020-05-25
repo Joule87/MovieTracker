@@ -9,16 +9,17 @@
 import Foundation
 
 struct Movie: Codable, Identifiable {
-    var id: Int = 0
+    var id: Int
     var title: String
+    //var posterURL: String
     var description: String
     var isWatched: Bool
     
-    init(title: String, description: String, isWatched: Bool) {
-        self.title = title
-        self.description = description
-        self.isWatched = isWatched
-    }
+//    init(title: String, description: String, isWatched: Bool) {
+//        self.title = title
+//        self.description = description
+//        self.isWatched = isWatched
+//    }
 }
 
 
